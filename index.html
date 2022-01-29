@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo!</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <!--redux-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/5.0.0-alpha.0/redux.min.js" integrity="sha512-6WJ7yVV5HDZwZ0RT5CM3FCTgTt5qC5BlfQ9bG43y0BowT5a3GXQqDYaoZgCk+i9vuB1Yj6KdBPQAU8Ra7tV32w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--highlight js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/agate.min.css">
+
+    <!--marked-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        marked.setOptions({
+            highlight: function(code, lang) {
+                return hljs.highlightAuto(code).value;
+            },
+            langPrefix: 'hljs language-',
+            breaks: true,
+            smartLists: true,
+            smartypants: true,
+            xhtml: true
+        });
+    </script>
+
+    <!--google icon font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <div id="root">
+        <header id="Header">
+            <h1 class="title btn" onclick="location.reload()">Memo!</h1>
+            <div class="header-btn">
+                <button onclick="saveToFile()">
+                    SAVE
+                    <span class="material-icons">file_download</span>
+                </button>
+                <input id="filebox" name="filebox" type="file" accept=".memojs" onchange="loadFile(this)" />
+                <label for="filebox" class="filebox btn">
+                    UPLOAD
+                    <span class="material-icons">file_upload</span>
+                </label>
+                <button class="reset" onclick="resetMemo(event)">
+                    RESET
+                    <span class="material-icons">replay</span>
+                </button>
+            </div>
+        </header>
+
+        <article id="Article">
+            <div id="memoBox"></div>
+        </article>
+
+        <footer>
+            D-DL. 2022
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
