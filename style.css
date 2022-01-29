@@ -248,11 +248,6 @@ button:hover,
     font-style: italic !important;
 }
 
-.memo-content code {
-    max-width: 100%;
-    white-space: pre-wrap;
-}
-
 .memo-content.overflow {
     overflow-y: hidden;
     -webkit-mask-image: 
@@ -317,11 +312,16 @@ button:hover,
 
 .btn-wide.right {
     text-align: right;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
 }
 
 .btn-group {
     display: flex;
     gap: 5px;
+    position: absolute;
+    right: 1em;
 }
 
 .btn-group > * {

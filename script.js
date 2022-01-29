@@ -259,6 +259,10 @@ function timeForToday(value) {
 }
 
 function setOverflowBoxStyle(target){
+	document.querySelectorAll('.memo-content code').forEach((el)=>{
+		el.classList.add('hljs');
+	});
+	
     if (target) {
         if (isOverflown(target))
             target.classList.add('overflow');

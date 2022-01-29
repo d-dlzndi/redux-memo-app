@@ -4,6 +4,11 @@
 ![preview](./preview.jpg)
 
 
+
+[View Page](https://d-dlzndi.github.io/redux-memo-app/)
+
+
+
 This is a simple web application made using pure redux and javascript.
 
 It stores the data in local Storage, not the server.
